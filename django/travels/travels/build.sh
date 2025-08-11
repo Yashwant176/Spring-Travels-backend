@@ -4,12 +4,7 @@ set -o errexit
 pwd
 ls -l
 
-cd ..
+pip install -r django/travels/requirements.txt
 
-pwd
-ls -l
-
-python -m pip install -r requirements.txt
-
-python manage.py collectstatic --no-input
-python manage.py migrate
+python django/travels/manage.py collectstatic --no-input
+python django/travels/manage.py migrate
